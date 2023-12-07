@@ -1,7 +1,7 @@
 package com.SoftwareEngineering.AppFactorial.controller;
 
 import com.SoftwareEngineering.AppFactorial.service.FactorialCalculatorIterative;
-//import com.SoftwareEngineering.AppFactorial.service.FactorialCalculatorRecursive;
+import com.SoftwareEngineering.AppFactorial.service.FactorialCalculatorRecursive;
 import com.SoftwareEngineering.AppFactorial.service.HtmlTableFormatterImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,11 +26,11 @@ public class FactorialController {
         List<String> tableHeader = new ArrayList<>();
         tableHeader.add("Number");
         tableHeader.add("Iterative Factorial");
-        //tableHeader.add("Recursive Factorial");
+        tableHeader.add("Recursive Factorial");
 
         List<List<String>> tableBody = new ArrayList<>();
         FactorialCalculatorIterative IterativeCalculator = new FactorialCalculatorIterative();
-        //FactorialCalculatorRecursive RecursiveCalculator = new FactorialCalculatorRecursive();
+        FactorialCalculatorRecursive RecursiveCalculator = new FactorialCalculatorRecursive();
 
         for (String number: numbers.split(",")){
             List<String> row = new ArrayList<>();
@@ -38,7 +38,7 @@ public class FactorialController {
 
             row.add(Integer.toString(num));
             row.add(Integer.toString(IterativeCalculator.calculateIterative(num)));
-            //row.add(Integer.toString(RecursiveCalculator.calculateRecursive(num)));
+            row.add(Integer.toString(RecursiveCalculator.calculateRecursive(num)));
             tableBody.add(row);
         }
 
