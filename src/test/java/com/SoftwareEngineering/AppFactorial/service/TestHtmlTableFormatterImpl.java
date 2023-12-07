@@ -15,7 +15,7 @@ public class TestHtmlTableFormatterImpl {
 
         header.add("Number");
         header.add("Iterative Factorial");
-        //header.add("Recursive Factorial");
+        header.add("Recursive Factorial");
 
         List<List<String>> body = new ArrayList<>();
 

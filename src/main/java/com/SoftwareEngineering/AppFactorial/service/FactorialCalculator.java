@@ -5,7 +5,7 @@ import java.util.Map;
 
 public interface FactorialCalculator {
     int calculateIterative(int n);
-    //int calculateRecursive(int n);
+    int calculateRecursive(int n);
 
     Map<String, Integer> calculateFactorials(List<Integer> numbers);
 }
